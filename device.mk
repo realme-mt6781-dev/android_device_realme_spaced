@@ -401,6 +401,9 @@ PRODUCT_PACKAGES += \
     RcsService \
     PresencePolling
 
+# Reduce system server verbosity.
+PRODUCT_SYSTEM_SERVER_DEBUG_INFO := false
+
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.mt6781 \
