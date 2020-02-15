@@ -831,6 +831,12 @@ on property:sys.boot_completed=1
     write /sys/block/dm-4/queue/read_ahead_kb 128
     write /sys/block/dm-5/queue/read_ahead_kb 128
 
+    # Disable edge limit control interface
+    write /proc/touchpanel/oplus_tp_limit_enable 0
+
+    # Enable oppo touchpanel direction
+    write /proc/touchpanel/oplus_tp_direction 1
+
 # OTG
     write /sys/devices/virtual/oplus_chg/usb/otg_switch 1
 
