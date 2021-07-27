@@ -39,6 +39,9 @@ on late-init
     write /sys/kernel/rcu_expedited 1
 
 on charger
+    # Turn backlight on 
+    write /sys/class/leds/lcd-backlight/brightness 1000
+
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1"
     write /sys/devices/platform/boot_dramboost/dramboost/dramboost 0
 
