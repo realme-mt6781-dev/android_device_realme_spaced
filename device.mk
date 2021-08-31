@@ -107,6 +107,12 @@ PRODUCT_PACKAGES += \
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
+# RCS 
+PRODUCT_PACKAGES += \
+    com.android.ims.rcsmanager \
+    RcsService \
+    PresencePolling
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
