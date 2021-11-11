@@ -251,7 +251,9 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     WifiOverlay \
     TetheringConfigOverlay \
-    CarrierConfigOverlay
+    CarrierConfigOverlay \
+    DozeOverlaySystem \
+    DozeOverlaySystemUI
 
 # Permissions
 PRODUCT_COPY_FILES += \
