@@ -287,3 +287,8 @@ persist.vendor.connsys.patch.version=-1
 persist.vendor.connsys.dynamic.dump=0
 vendor.connsys.driver.ready=no
 ro.vendor.wifi.sap.concurrent.iface=ap1
+
+# ZRAM
+ro.zram.mark_idle_delay_mins=60
+ro.zram.first_wb_delay_mins=1440
+ro.zram.periodic_wb_delay_hours=24
