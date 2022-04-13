@@ -428,7 +428,7 @@ PRODUCT_OTHER_JAVA_DEBUG_INFO := false
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.mt6781 \
-    fstab.mt6781_ramdisk \
+    fstab.mt6781.ramdisk \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6781.rc \
