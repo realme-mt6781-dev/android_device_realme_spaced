@@ -1108,6 +1108,9 @@ on property:ro.boot.product.hardware.sku=nfc
     start vendor.nfc_hal_service
     start mtk_secure_element_hal_service
 
+on property:ro.boot.product.hardware.sku=""
+    stop vendor.nfc_hal_service
+
 service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
     override
     disabled
