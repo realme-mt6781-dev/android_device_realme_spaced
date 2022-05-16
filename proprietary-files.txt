@@ -2997,8 +2997,6 @@ vendor/lib/libcam.utils.sensorprovider.so
 vendor/lib/libhwm.so
 vendor/lib/librgbwlightsensor.so
 vendor/lib/libsensorndkbridge.so
-vendor/bin/hw/android.hardware.sensors@2.0-service.multihal-mediatek
-vendor/etc/init/android.hardware.sensors@2.0-service.multihal-mediatek.rc
 vendor/lib64/libsensorndkbridge.so
 vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
 vendor/lib64/hw/sensors.mt6781.so
