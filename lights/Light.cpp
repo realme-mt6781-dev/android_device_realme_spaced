@@ -97,8 +97,12 @@ static inline uint32_t getScaledBrightness(const HwLightState& state, uint32_t m
 }
 
 static void handleBacklight(const HwLightState& state) {
-    uint32_t brightness = getScaledBrightness(state, getMaxBrightness(LCD_LED MAX_BRIGHTNESS));
-    LOG(DEBUG) << "Setting brightness: " << brightness;
+    int maxBrightness
+        = android::base::GetIntProperty("persist.vendor.light.max_brightness", 0);
+    if (maxBrightness < 1)
+        maxBrightness = getMaxBrightness(LCD_LED MAX_BRIGHTNESS);
+
+    uint32_t brightness = getScaledBrightness(state, maxBrightness);
     set(LCD_LED BRIGHTNESS, brightness);
 }
 
