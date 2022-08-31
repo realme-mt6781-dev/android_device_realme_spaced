@@ -13,9 +13,9 @@
 // limitations under the License.
 
 cc_binary {
-    name: "vendor.lineage.livedisplay@2.0-service-spaced",
-    init_rc: ["vendor.lineage.livedisplay@2.0-service-spaced.rc"],
-    vintf_fragments: ["vendor.lineage.livedisplay@2.0-service-spaced.xml"],
+    name: "vendor.lineage.livedisplay@2.1-service-spaced",
+    init_rc: ["vendor.lineage.livedisplay@2.1-service-spaced.rc"],
+    vintf_fragments: ["vendor.lineage.livedisplay@2.1-service-spaced.xml"],
     vendor: true,
     defaults: ["hidl_defaults"],
     relative_install_path: "hw",
@@ -27,10 +27,12 @@ cc_binary {
         "libhidltransport",
         "libutils",
         "vendor.lineage.livedisplay@2.0",
+        "vendor.lineage.livedisplay@2.1"
     ],
 
     srcs: [
 	"DisplayColorCalibration.cpp",
+        "AntiFlicker.cpp",
         "service.cpp",
     ]
 }
