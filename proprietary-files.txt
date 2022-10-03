@@ -136,10 +136,6 @@ vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
-# Audio (FX modules)
-vendor/lib/soundfx/libaudiopreprocessing_mtk.so
-vendor/lib64/soundfx/libaudiopreprocessing_mtk.so
-
 # Audio Configs
 odm/etc/audio/audio_device/common/audio_device.xml
 odm/etc/audio/audio_device/audio_device.xml
