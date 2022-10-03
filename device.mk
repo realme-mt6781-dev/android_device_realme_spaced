@@ -40,7 +40,6 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     libaudiofoundation.vendor \
     libbluetooth_audio_session \
-    libalsautils \
     libnbaio_mono \
     libtinycompress \
     libdynproc \
