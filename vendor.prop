@@ -63,6 +63,7 @@ ro.vendor.mtk_zsdhdr_support=1
 
 # Display
 ro.sf.lcd_density=480
+persist.vendor.light.max_brightness=2047
 ro.opengles.version=196610
 ro.vendor.composer_version=2.3
 debug.mediatek.disp_decompress=1
