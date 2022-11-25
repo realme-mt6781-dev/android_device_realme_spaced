@@ -52,7 +52,7 @@ done
 function blob_fixup {
     case "$1" in
         vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so)
-            grep -q "libcamera_metadata_shim.so" "${2}" || "${PATCHELF}" --add-needed "libcamera_metadata_shim.so" "${2}"
+            grep -q libshim_camera_metadata.so "$2" || "$PATCHELF" --add-needed libshim_camera_metadata.so "$2"
             ;;
         vendor/lib/hw/vendor.mediatek.hardware.pq@2.15-impl.so)
             ;&
