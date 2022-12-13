@@ -121,6 +121,10 @@ PRODUCT_PACKAGES += \
    libkeystore-wifi-hidl \
    libkeystore-engine-wifi-hidl
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light-service.spaced
+
 # Media
 PRODUCT_PACKAGES += \
     libcodec2_hidl@1.1.vendor \
