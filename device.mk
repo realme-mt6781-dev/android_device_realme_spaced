@@ -126,7 +126,8 @@ PRODUCT_PACKAGES += \
     init.mt6781.usb.rc \
     init.project.rc \
     init.sensor_1_0.rc \
-    ueventd.mtk.rc
+    ueventd.mtk.rc \
+    ueventd.oplus.rc
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
