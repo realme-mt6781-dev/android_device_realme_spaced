@@ -96,6 +96,10 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     libdrm.vendor
 
+# Doze
+PRODUCT_PACKAGES += \
+    OplusDoze
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4-service.clearkey
