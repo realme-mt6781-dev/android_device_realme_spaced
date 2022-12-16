@@ -47,6 +47,7 @@
 
 # NFC
 /dev/pn553                                                                                                             u:object_r:nfc_device:s0
+/(vendor|system/vendor)/bin/nfc_detect\.sh                                                                             u:object_r:nfc_detect_exec:s0
 
 # Perfmgr
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.oplus-libperfmgr                                      u:object_r:hal_power_default_exec:s0
