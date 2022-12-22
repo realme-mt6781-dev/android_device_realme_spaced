@@ -337,6 +337,7 @@ PRODUCT_PACKAGES += \
     init.mt6781.usb.rc \
     init.project.rc \
     init.sensor_1_0.rc \
+    init.target.rc \
     ueventd.mtk.rc \
     ueventd.oplus.rc
 
