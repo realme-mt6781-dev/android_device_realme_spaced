@@ -14,4 +14,6 @@ fi
 VT-IMS=vendor/mediatek/ims/ims.mk
 if ! [ -a $VT-IMS ]; then git clone https://github.com/techyminati/android_vendor_mediatek_ims.git vendor/mediatek/ims
 fi
-echo end cloning
+POCKET=packages/apps/PocketMode/pocket_mode.mk
+if ! [ -a $POCKET ]; then git clone https://github.com/realme-mt6781-dev/packages_apps_PocketMode packages/apps/PocketMode
+fi

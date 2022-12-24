@@ -13,6 +13,9 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 # IMS-Vendor
 $(call inherit-product-if-exists, vendor/mediatek/ims/ims.mk)
 
+# Pocket Mode
+$(call inherit-product-if-exists, packages/apps/PocketMode/pocket_mode.mk)
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30
 
