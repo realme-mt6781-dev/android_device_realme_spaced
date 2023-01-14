@@ -113,6 +113,21 @@ PRODUCT_PACKAGES += \
     RcsService \
     PresencePolling
 
+# Rootdir
+PRODUCT_PACKAGES += \
+    fstab.mt6781 \
+    init.ago.rc \
+    init.cgroup.rc \
+    init.connectivity.common.rc \
+    init.connectivity.rc \
+    init_connectivity.rc \
+    init.modem.rc \
+    init.mt6781.rc \
+    init.mt6781.usb.rc \
+    init.project.rc \
+    init.sensor_1_0.rc \
+    ueventd.mtk.rc
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
