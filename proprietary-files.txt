@@ -2616,6 +2616,8 @@ vendor/etc/mtk_omx_core.cfg
 vendor/etc/mtk_platform_codecs_config.xml
 vendor/lib/AVCSecureVdecCA.so
 vendor/lib/VP9SecureVdecCA.so
+vendor/lib/libAVCSecureVencCA.so
+vendor/lib/HEVCSecureVdecCA.so
 vendor/lib/libHEVCdec_sa.ca7.android.so
 vendor/lib/libJpgEncPipe.so
 vendor/lib/libh264dec_customize.so
@@ -2651,6 +2653,8 @@ vendor/lib/libvpu5.so
 vendor/lib/libvpud_vcodec.so
 vendor/lib64/AVCSecureVdecCA.so
 vendor/lib64/VP9SecureVdecCA.so
+vendor/lib64/AVCSecureVdecCA.so
+vendor/lib64/HEVCSecureVdecCA.so
 vendor/lib64/libJpgEncPipe.so
 vendor/lib64/libMtkOmxCore.so
 vendor/lib64/libacdk.so
