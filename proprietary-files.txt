@@ -427,8 +427,6 @@ vendor/etc/aurisys_config.xml
 vendor/etc/aurisys_config_hifi3.xml
 
 # Bluetooth
-lib64/libaptX_encoder.so
-lib64/libaptXHD_encoder.so
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/bin/autobt
 vendor/bin/bip
