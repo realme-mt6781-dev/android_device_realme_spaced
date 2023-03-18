@@ -70,6 +70,9 @@ function blob_fixup {
             "${PATCHELF}" --replace-needed "libbinder.so" "libbinder-v32.so" "${2}"
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase_v32.so" "${2}"
             ;;
+        vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc)
+            sed -i 's/@1.2-mediatek/@1.2-mediatek-64b/g' "${2}"
+            ;;
         vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so)
             [ "$2" = "" ] && return 0
             grep -q "libcamera_metadata_shim.so" "${2}" || "${PATCHELF}" --add-needed "libcamera_metadata_shim.so" "${2}"
@@ -89,7 +92,7 @@ function blob_fixup {
         vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc)
             sed -i 's/start/enable/' "$2"
             ;;
-        vendor/bin/hw/android.hardware.media.c2@1.2-mediatek|vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b)
+        vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b)
             "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
             "${PATCHELF}" --replace-needed "libavservices_minijail_vendor.so" "libavservices_minijail.so" "${2}"
             ;;
