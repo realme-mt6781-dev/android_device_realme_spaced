@@ -13,6 +13,9 @@
 # Light
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light-service\.spaced                                                u:object_r:hal_light_default_exec:s0
 
+# LiveDisplay
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.1-service-spaced                                        u:object_r:hal_lineage_livedisplay_spaced_exec:s0
+
 # Sensors
 /(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@2\.0-service-multihal\.spaced                                u:object_r:mtk_hal_sensors_exec:s0
 /(odm|vendor/odm)/bin/hw/vendor\.oplus\.hardware\.oplusSensor@1\.0-service                                             u:object_r:mtk_hal_sensors_exec:s0
