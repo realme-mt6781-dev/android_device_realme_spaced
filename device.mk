@@ -253,7 +253,8 @@ PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
     CarrierConfigOverlay \
     DozeOverlaySystem \
-    DozeOverlaySystemUI
+    DozeOverlaySystemUI \
+    OplusDozeOverlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
