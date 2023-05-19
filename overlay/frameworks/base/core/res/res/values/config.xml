@@ -24,66 +24,118 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Array of output values for LCD backlight corresponding to the LUX values
-         in the config_autoBrightnessLevels array.  This array should have size one greater
-         than the size of the config_autoBrightnessLevels array.
-         This must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>8</item>
-        <item>64</item>
-        <item>98</item>
-        <item>104</item>
-        <item>110</item>
-        <item>116</item>
-        <item>122</item>
-        <item>128</item>
-        <item>134</item>
-        <item>182</item>
-        <item>255</item>
-        <item>255</item>
-        <item>255</item>
-        <item>255</item>
-        <item>255</item>
-        <item>255</item>
-        <item>255</item>
-        <item>255</item>
-    </integer-array>
-
-    <!-- Array of light sensor lux values to define our levels for auto backlight brightness support.
+    <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
          The N entries of this array define N + 1 control points as follows:
          (1-based arrays)
+
          Point 1:            (0, value[1]):             lux <= 0
          Point 2:     (level[1], value[2]):  0        < lux <= level[1]
          Point 3:     (level[2], value[3]):  level[2] < lux <= level[3]
          ...
          Point N+1: (level[N], value[N+1]):  level[N] < lux
+
          The control points must be strictly increasing.  Each control point
          corresponds to an entry in the brightness backlight values arrays.
-         For example, if lux == level[1] (first element of the levels array)
+         For example, if LUX == level[1] (first element of the levels array)
          then the brightness will be determined by value[2] (second element
          of the brightness values array).
+
          Spline interpolation is used to determine the auto-brightness
-         backlight values for lux levels between these control points.
+         backlight values for LUX levels between these control points.
+
          Must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLevels">
-        <item>128</item>
-        <item>256</item>
-        <item>384</item>
-        <item>512</item>
-        <item>640</item>
-        <item>768</item>
-        <item>896</item>
-        <item>1024</item>
-        <item>2048</item>
-        <item>4096</item>
-        <item>6144</item>
-        <item>8192</item>
-        <item>10240</item>
-        <item>12288</item>
-        <item>14336</item>
-        <item>16384</item>
-        <item>18432</item>
-    </integer-array>
+    <array name="config_autoBrightnessLevels">
+        <item>2</item>
+        <item>4</item>
+        <item>5</item>
+        <item>10</item>
+        <item>40</item>
+        <item>100</item>
+        <item>325</item>
+        <item>1250</item>
+        <item>3500</item>
+        <item>5500</item>
+        <item>10000</item>
+    </array>
+
+    <!-- Array of desired screen brightness in nits corresponding to the lux values
+         in the config_autoBrightnessLevels array. As with config_screenBrightnessMinimumNits and
+         config_screenBrightnessMaximumNits, the display brightness is defined as the measured
+         brightness of an all-white image.
+
+         If this is defined then:
+            - config_autoBrightnessLcdBacklightValues should not be defined
+            - config_screenBrightnessNits must be defined
+            - config_screenBrightnessBacklight must be defined
+
+         This array should have size one greater than the size of the config_autoBrightnessLevels
+         array. The brightness values must be non-negative and non-decreasing. This must be
+         overridden in platform specific overlays -->
+    <array name="config_autoBrightnessDisplayValuesNits">
+        <item>2</item>
+        <item>7</item>
+        <item>10</item>
+        <item>12</item>
+        <item>24</item>
+        <item>95</item>
+        <item>111</item>
+        <item>149</item>
+        <item>192</item>
+        <item>252</item>
+        <item>500</item>
+        <item>700</item>
+    </array>
+
+    <!-- An array describing the screen's backlight values corresponding to the brightness
+         values in the config_screenBrightnessNits array.
+
+         This array should be equal in size to config_screenBrightnessBacklight. -->
+    <array name="config_screenBrightnessBacklight">
+        <item>0</item>
+        <item>1</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>10</item>
+        <item>41</item>
+        <item>48</item>
+        <item>65</item>
+        <item>84</item>
+        <item>110</item>
+        <item>218</item>
+        <item>255</item>
+    </array>
+
+    <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
+         values in the config_screenBrightnessBacklight array.  On OLED displays these  values
+         should be measured with an all white image while the display is in the fully on state.
+         Note that this value should *not* reflect the maximum brightness value for any high
+         brightness modes but only the maximum brightness value obtainable in a sustainable manner.
+
+         This array should be equal in size to config_screenBrightnessBacklight -->
+    <array name="config_screenBrightnessNits">
+        <item>0</item>
+        <item>2</item>
+        <item>7</item>
+        <item>10</item>
+        <item>12</item>
+        <item>24</item>
+        <item>95</item>
+        <item>111</item>
+        <item>149</item>
+        <item>192</item>
+        <item>252</item>
+        <item>500</item>
+        <item>700</item>
+    </array>
+
+    <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
+         for debouncing the light sensor.  Different constants are used to debounce the light sensor
+         when adapting to brighter or darker environments.  This parameter controls how quickly
+         brightness changes occur in response to an observed change in light level that exceeds the
+         hysteresis threshold. -->
+    <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">2000</integer>
 
     <!-- Default screen brightness setting set.
          -2 is invalid so setting will resort to int value specified above.
