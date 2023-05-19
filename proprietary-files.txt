@@ -2283,7 +2283,6 @@ vendor/lib64/hw/libMcGatekeeper.so
 vendor/lib64/hw/libSoftGatekeeper.so
 
 # GNSS
-vendor/bin/hw/android.hardware.gnss-service.mediatek
 vendor/bin/mtk_agpsd
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_US.xml
@@ -2301,7 +2300,6 @@ vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Vodafone.xml
 vendor/etc/gnss/agps_profiles_conf2.xml
-vendor/etc/init/android.hardware.gnss-service.mediatek.rc
 vendor/etc/init/mtk_agpsd_p.rc
 vendor/etc/security/cacerts/01419da9.0
 vendor/etc/security/cacerts/04f60c28.0
@@ -2461,11 +2459,9 @@ vendor/etc/security/cacerts_supl/lab/b5805141.0
 vendor/etc/security/cacerts_supl/lab/b805b58a.0
 vendor/etc/security/cacerts_supl/lab/ed7b215e.0
 vendor/etc/security/cacerts_supl/lab/ef4b31e6.0
--vendor/etc/vintf/manifest/gnss-default.xml:vendor/etc/vintf/manifest/gnss-mtk.xml
--vendor/etc/vintf/manifest/gnss@2.1-service.xml:vendor/etc/vintf/manifest/gnss@2.1-service-mtk.xml
+vendor/etc/vintf/manifest/gnss@2.1-service.xml:vendor/etc/vintf/manifest/gnss@2.1-service-mtk.xml
 vendor/etc/slp_conf
 vendor/lib/hw/gps.default.so
-vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
 vendor/lib64/hw/android.hardware.gnss@2.1-impl-mediatek.so
 vendor/lib64/hw/gps.default.so
 vendor/lib64/libDR.so
