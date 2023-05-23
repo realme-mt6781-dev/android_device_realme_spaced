@@ -982,6 +982,8 @@ on property:sys.boot_completed=1
     # stop bootprof
     write /proc/bootprof 0
 
+# OTG
+    write /sys/devices/virtual/oplus_chg/usb/otg_switch 1
 
 #service dpfd /vendor/bin/dpfd
 #	user root
