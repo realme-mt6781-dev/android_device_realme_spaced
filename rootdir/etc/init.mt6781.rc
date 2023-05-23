@@ -737,7 +737,6 @@ on zygote-start
     #endif/*OPLUS_FEATURE_TP_BSPFWUPDATE*/
 on early-boot
     write /proc/bootprof "INIT:early-boot"
-    verity_update_state
 
 on boot
     write /proc/bootprof "INIT:boot"
