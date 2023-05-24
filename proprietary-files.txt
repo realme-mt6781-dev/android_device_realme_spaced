@@ -23,9 +23,6 @@ vendor/lib/libladder.so
 vendor/lib64/libaedv.so
 vendor/lib64/libladder.so
 
-# ADSP
-odm/lib64/libadsprpc.so
-
 # Audio
 odm/lib/libnp-loader.so
 odm/lib/libnxprecord.so
@@ -1960,9 +1957,6 @@ odm/etc/camera/fb_default
 odm/etc/camera/fwk_config.json
 odm/etc/fad/M_Attribute_AG_BMW_1.1.0.model
 odm/etc/fad/M_FaceAttribute_RGB_age_gender_1.7.1.model.hardcode
-
-# CDSP
-odm/lib64/libcdsprpc.so
 
 # Display
 odm/lib/libdpservice.so
