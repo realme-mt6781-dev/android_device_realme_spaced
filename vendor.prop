@@ -256,5 +256,4 @@ persist.vendor.connsys.chipid=-1
 persist.vendor.connsys.patch.version=-1
 persist.vendor.connsys.dynamic.dump=0
 vendor.connsys.driver.ready=no
-ro.vendor.connsys.dedicated.log=1
 ro.vendor.wifi.sap.concurrent.iface=ap1
