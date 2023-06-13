@@ -2561,12 +2561,6 @@ system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 # ImsService
 -priv-app/ImsService/ImsService.apk|738b92467c052c0e95ee3fd748bde51ab0b90336
 
-# Kernel Power Off Charging (KPOC)
-bin/kpoc_charger
-etc/init/kpoc_charger.rc
-lib64/libshowlogo.so
-lib64/libsysenv_system.so
-
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@4.1-service.trustonic
 vendor/bin/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-service
