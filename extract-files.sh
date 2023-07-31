@@ -90,6 +90,9 @@ function blob_fixup {
         system/lib64/libsink.so)
             "${PATCHELF}" --add-needed "libshim_sink.so" "$2"
             ;;
+        vendor/lib64/libwifi-hal-mtk.so)
+            "${PATCHELF}" --set-soname "libwifi-hal-mtk.so" "${2}"
+            ;;
     esac
 }
 
