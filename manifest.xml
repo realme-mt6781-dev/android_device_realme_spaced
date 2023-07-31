@@ -14,6 +14,11 @@
         <transport>hwbinder</transport>
         <fqname>@1.1::IBluetoothHci/default</fqname>
     </hal>
+        <hal format="hidl">
+        <name>android.hardware.bluetooth.audio</name>
+        <transport>hwbinder</transport>
+        <fqname>@2.1::IBluetoothAudioProvidersFactory/default</fqname>
+    </hal>
     <hal format="hidl">
         <name>android.hardware.camera.provider</name>
         <transport>hwbinder</transport>
@@ -240,5 +245,17 @@
         <name>vendor.mediatek.hardware.videotelephony</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::IVideoTelephony/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.oplus.hardware.appradio</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IOplusAppRadio/oplus_app_slot1</fqname>
+        <fqname>@1.0::IOplusAppRadio/oplus_app_slot2</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.oplus.hardware.radio</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IOplusRadio/oplus_slot1</fqname>
+        <fqname>@1.0::IOplusRadio/oplus_slot2</fqname>
     </hal>
 </manifest>

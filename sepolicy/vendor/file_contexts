@@ -47,7 +47,6 @@
 
 # NFC
 /dev/pn553                                                                                                             u:object_r:nfc_device:s0
-/(vendor|system/vendor)/bin/nfc_detect\.sh                                                                             u:object_r:nfc_detect_exec:s0
 
 # Touch
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@[0-9]\.[0-9]-service\.oplus                                      u:object_r:hal_lineage_touch_default_exec:s0
