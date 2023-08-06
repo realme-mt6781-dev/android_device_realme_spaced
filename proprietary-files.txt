@@ -124,11 +124,6 @@ vendor/lib64/liboplus_audio_config.so
 vendor/lib64/librt_extamp_intf.so
 vendor/lib64/libspeech_enh_lib.so
 vendor/lib64/libspeechparser_vendor.so
-vendor/lib64/libvow_ap_test_aa.so
-vendor/lib64/libvow_ap_test_dd.so
-vendor/lib64/libvow_ap_test_ha.so
-vendor/lib64/libvow_ap_test_hh.so
-vendor/lib64/libvow_ap_test_nn.so
 vendor/lib64/vendor.mediatek.hardware.atci@1.0.so
 vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
 vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
@@ -2822,7 +2817,6 @@ vendor/lib64/libsensorndkbridge.so
 
 # Soundtrigger
 vendor/lib/hw/sound_trigger.primary.default.so
-vendor/lib64/hw/sound_trigger.primary.default.so
 
 # Thermal
 odm/etc/temperature_profile/sys_high_temp_protect_realme_21690.xml
