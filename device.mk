@@ -16,6 +16,9 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+# VINTF
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
