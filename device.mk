@@ -376,7 +376,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.mt6781 \
     fstab.mt6781_ramdisk \
-    init.ago.rc \
     init.cgroup.rc \
     init.connectivity.rc \
     init.modem.rc \
