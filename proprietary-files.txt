@@ -2112,6 +2112,17 @@ vendor/lib64/libtlcWidevineModularDrm.so
 vendor/lib64/liburee_meta_drmkeyinstall.so
 vendor/lib64/libwvhidl.so
 
+# EngineerMode
+lib/libem_support_jni.so
+lib64/libem_support_jni.so
+vendor/lib64/vendor.mediatek.hardware.engineermode@1.0.so
+vendor/lib64/vendor.mediatek.hardware.engineermode@1.1.so
+vendor/lib64/vendor.mediatek.hardware.engineermode@1.2.so
+vendor/lib64/vendor.mediatek.hardware.engineermode@1.3.so
+
+# Pin patched activity exported engineer mode
+-priv-app/EngineerMode/EngineerMode.apk|9c90462d8caf098ce923bb947a58e49ca13be579
+
 # Firmware
 odm/firmware/aw87339/aw87339_abrcv.bin
 odm/firmware/aw87339/aw87339_drcv.bin
