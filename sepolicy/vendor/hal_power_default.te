@@ -21,6 +21,7 @@ allow hal_power_default system_server:process setsched;
 
 # Set CPU frequency
 allow hal_power_default sysfs_mtk_cpufreq:file rw_file_perms;
+allow hal_power_default sysfs_devices_system_cpu:file rw_file_perms;
 
 # Set GPU frequency
 allow hal_power_default sysfs_mtk_gpufreq:file rw_file_perms;
@@ -48,6 +49,8 @@ allow hal_power_default sysfs_fpsgo:dir r_dir_perms;
 allow hal_power_default sysfs_fpsgo:file rw_file_perms;
 allow hal_power_default vendor_sysfs_gpu:dir search;
 allow hal_power_default vendor_sysfs_gpu:file rw_file_perms;
+allow hal_power_default cgroup:dir search;
+allow hal_power_default cgroup:file rw_file_perms;
 
 # Display
 allow hal_power_default vendor_proc_display:dir r_dir_perms;
