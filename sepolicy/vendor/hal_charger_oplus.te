@@ -39,3 +39,7 @@ r_dir_file(hal_charger_oplus, vendor_proc_oplus_version)
 r_dir_file(hal_charger_oplus, sysfs_batteryinfo)
 
 get_prop(hal_charger_oplus, hwservicemanager_prop)
+
+allow hal_charger_oplus vendor_sysfs_ac_supply:file { read };
+allow hal_charger_oplus vendor_sysfs_ac_supply:file { open };
+allow hal_charger_oplus vendor_sysfs_ac_supply:dir { search };
