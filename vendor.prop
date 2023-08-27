@@ -98,6 +98,7 @@ debug.sf.earlyGl.sf.duration=27600000
 debug.sf.earlyGl.app.duration=20000000
 debug.sf.hwc.min.duration=23000000
 debug.sf.latch_unsignaled=true
+persist.sys.sf.color_saturation=1.22
 
 # DRAM
 ro.vendor.mtk_config_max_dram_size=0x800000000
