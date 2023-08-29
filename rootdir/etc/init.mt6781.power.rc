@@ -42,6 +42,12 @@ on init
     chown system system /dev/stune/camera-daemon/tasks
     chmod 0664 /dev/stune/camera-daemon/tasks
 
+    # Configure governor settings for little cluster
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedutil"
+
+    # Configure governor settings for big cluster
+    write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor "schedutil"
+
     # create io boost group
     mkdir /dev/stune/io
     chown system system /dev/stune/io
