@@ -41,6 +41,9 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.oplus                          u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-silead                                          u:object_r:hal_fingerprint_default_exec:s0
 
+# Latency
+/dev/cpu_dma_latency                                                                                    u:object_r:latency_device:s0
+
 # Firmwares
 /odm/vendor/firmware(/.*)?                                                                                             u:object_r:vendor_firmware_file:s0
 /odm/firmware(/.*)?                                                                                                    u:object_r:vendor_firmware_file:s0
