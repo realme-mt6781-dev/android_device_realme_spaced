@@ -2091,9 +2091,6 @@ vendor/lib64/libsensorndkbridge.so
 vendor/lib/hw/sound_trigger.primary.default.so
 
 # Thermal
-odm/etc/temperature_profile/sys_high_temp_protect_realme_21690.xml
-odm/etc/temperature_profile/sys_thermal_control_config.xml
-vendor/bin/hw/android.hardware.thermal@2.0-service.mtk
 vendor/bin/thermal
 vendor/bin/thermal_manager
 vendor/bin/thermalloadalgod
@@ -2101,15 +2098,12 @@ vendor/etc/.tp/.ht120.mtc
 vendor/etc/.tp/.thermal_policy_08
 vendor/etc/.tp/thermal.conf
 vendor/etc/.tp/thermal.off.conf
-vendor/etc/init/android.hardware.thermal@2.0-service.mtk.rc
 vendor/etc/init/init.thermal.rc
 vendor/etc/init/init.thermal_manager.rc
 vendor/etc/init/init.thermalloadalgod.rc
 vendor/etc/fstb.cfg
 vendor/etc/mpe.conf
-vendor/lib/hw/android.hardware.thermal@2.0-impl.so
 vendor/lib/libthermalalgo.so
-vendor/lib64/hw/android.hardware.thermal@2.0-impl.so
 
 # ORMS
 odm/bin/hw/vendor.oplus.hardware.ormsHalService-aidl-service
