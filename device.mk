@@ -367,10 +367,6 @@ PRODUCT_PACKAGES += \
     RcsService \
     PresencePolling
 
-# RenderScript
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-imp
-
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.mt6781 \
