@@ -42,6 +42,11 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     audio_policy.stub
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0.vendor \
+    android.hardware.bluetooth@1.1.vendor
+
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
