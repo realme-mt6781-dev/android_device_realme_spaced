@@ -71,6 +71,8 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-resources.vendor \
     android.hardware.graphics.composer@2.2-resources.vendor \
     android.hardware.graphics.composer@2.3-service \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.memtrack@1.0-impl \
     libdrm.vendor
 
 # DRM
