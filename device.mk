@@ -278,6 +278,11 @@ PRODUCT_PACKAGES += \
     DozeOverlaySystemUI \
     OplusDozeOverlay
 
+# Protobuf
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full \
+    libprotobuf-cpp-full-3.9.1-vendorcompat
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
