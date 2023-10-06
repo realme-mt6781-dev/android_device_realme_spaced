@@ -226,10 +226,6 @@ PRODUCT_COPY_FILES += $(TARGET_PREBUILT_KERNEL):kernel
 PRODUCT_PACKAGES += \
     android.hardware.light-service.spaced
 
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.1-service-spaced
-
 # Vendor Log Tag
 include $(LOCAL_PATH)/vendor_logtag.mk
 
