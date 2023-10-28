@@ -80,6 +80,9 @@ function blob_fixup {
         vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc)
             sed -i 's/start/enable/' "$2"
             ;;
+		vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml)
+			sed -i 's/1.1/1.2/' "$2"
+			;;
     esac
 }
 
