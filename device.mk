@@ -477,7 +477,7 @@ PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.config@1.0.vendor \
     android.hardware.tetheroffload.control@1.0.vendor \
     android.hardware.tetheroffload.control@1.1.vendor \
-    android.hardware.wifi-service-lazy \
+    android.hardware.wifi-service \
     wpa_supplicant \
     hostapd
 
