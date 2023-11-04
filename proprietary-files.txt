@@ -2492,6 +2492,8 @@ vendor/lib/libMtkOmxApeDec.so
 vendor/lib/libMtkOmxCore.so
 vendor/lib/libMtkOmxGsmDec.so
 vendor/lib/libMtkOmxMp3Dec.so
+vendor/lib/libstagefrighthw.so
+vendor/lib64/libstagefrighthw.so
 
 # Media (Codec2)
 odm/lib/vendor.oplus.hardware.performance-V1-ndk_platform.so
