@@ -83,6 +83,9 @@ function blob_fixup {
 		vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml)
 			sed -i 's/1.1/1.2/' "$2"
 			;;
+        lib64/libsink.so)
+            "${PATCHELF}" --add-needed "libshim_vtservice.so" "$2"
+            ;;
     esac
 }
 
