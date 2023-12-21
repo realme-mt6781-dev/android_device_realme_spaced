@@ -260,3 +260,4 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.log.tag.BufferQueueProducer=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.SurfaceControl=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.GraphicBuffer=$(VENDOR_LOG_LEVEL)
+    persist.log.tag.gralloc4=$(VENDOR_LOG_LEVEL) \
