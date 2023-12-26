@@ -75,6 +75,7 @@ ro.vendor.smvr.p2batch.fhd=4
 ro.vendor.pq.mtk_backlight_smooth_support=1
 ro.vendor.pq.mtk_ultra_dimming_support=0
 ro.vendor.pq.mtk_blulight_def_support=1
+ro.sf.blurs_are_expensive=1
 ro.hardware.egl=meow
 debug.graphics.game_default_frame_rate.disabled=true
 debug.hwui.skia_tracing_enabled=false
