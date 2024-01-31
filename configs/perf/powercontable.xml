@@ -83,9 +83,9 @@
         <DefaultValue>0</DefaultValue>
     </CMD>
     <CMD name="PERF_RES_SCHED_BOOST" id="0x01410000">
-        <Entry path="/sys/devices/system/cpu/sched/sched_boost"></Entry>
+        <Entry path="/proc/perfmgr/boost_ctrl/eas_ctrl/sched_boost"></Entry>
         <Compare>more</Compare>
-        <MaxValue>6</MaxValue>
+        <MaxValue>2</MaxValue>
         <MinValue>0</MinValue>
     </CMD>
     <CMD name="PERF_RES_SCHED_MIGRATE_COST" id="0x01414000">
@@ -759,5 +759,19 @@
         <Compare>more</Compare>
         <MaxValue>65535</MaxValue>
         <MinValue>0</MinValue>
+    </CMD>
+    <CMD name="PERF_RES_SCHED_UCLAMP_MIN_SF" id="0x01408e00">
+        <Entry path="/dev/stune/sf_standalone/schedtune.uclamp.min"></Entry>
+        <Compare>more</Compare>
+        <MaxValue>100</MaxValue>
+        <MinValue>0</MinValue>
+        <DefaultValue>0</DefaultValue>
+    </CMD>
+    <CMD name="PERF_RES_SCHED_UCLAMP_MAX_SF" id="0x01408f00">
+        <Entry path="/dev/stune/sf_standalone/schedtune.uclamp.max"></Entry>
+        <Compare>more</Compare>
+        <MaxValue>100</MaxValue>
+        <MinValue>0</MinValue>
+        <DefaultValue>100</DefaultValue>
     </CMD>
 </CONTABLE>

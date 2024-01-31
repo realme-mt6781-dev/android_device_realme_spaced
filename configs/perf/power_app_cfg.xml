@@ -503,15 +503,14 @@ any software that is unrelated to enhancing end-user experience. -->
     <Package name="com.estrongs.android.pop.pro">
         <Activity name="Common">
             <FPS value="Common">
-                <data cmd="PERF_RES_SCHED_PLUS_DOWN_THROTTLE_NS" param1="1000000"></data>
+                <data cmd="PERF_RES_SCHED_PLUS_DOWN_THROTTLE_NS" param1="40000000"></data>
                 <data cmd="PERF_RES_SCHED_PLUS_UP_THROTTLE_NS" param1="0"></data>
-                <data cmd="PERF_RES_IO_BLKDEV_READAHEAD" param1="512"></data>
                 <data cmd="PERF_RES_SCHED_UCLAMP_MIN_TA" param1="100"></data>
                 <data cmd="PERF_RES_SCHED_UCLAMP_MIN_FG" param1="100"></data>
                 <data cmd="PERF_RES_FPS_FSTB_SOFT_FPS_LOWER" param1="60"></data>
                 <data cmd="PERF_RES_FPS_FSTB_SOFT_FPS_UPPER" param1="60"></data>
                 <data cmd="PERF_RES_FPS_FBT_BHR_OPP" param1="15"></data>
-                <data cmd="PERF_RES_SCHED_BOOST" param1="1"></data>
+                <data cmd="PERF_RES_DRAM_OPP_MIN" param1="1"></data>
             </FPS>
         </Activity>
     </Package>
