@@ -132,6 +132,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
 
+# Engineering mode
+PRODUCT_PACKAGES += \
+    libjni_shim
+
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
