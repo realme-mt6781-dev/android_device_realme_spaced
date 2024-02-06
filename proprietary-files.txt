@@ -2091,7 +2091,6 @@ odm/lib/liboemcrypto.so
 odm/lib64/liboemcrypto.so
 vendor/bin/hw/android.hardware.drm@1.4-service.widevine
 vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
--vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.clearkey.xml
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/libtlcWidevineModularDrm.so
@@ -2594,15 +2593,15 @@ vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so
 vendor/lib64/libnxp_extamp_intf.so
 vendor/lib64/libtflite_mtk.so
 
-# NFC
-odm/etc/init/init.pn8x.nfc.rc
-odm/etc/nfc/libnfc-nxp.conf_21692:vendor/etc/libnfc-nxp.conf
-odm/etc/nfc/pnscr/libnfc-nxp-pnscr.conf:odm/etc/libnfc-nxp-pnscr.conf
-odm/lib/libpn553_fw.so
-odm/lib/libpn557_fw.so
-odm/lib/libpnscr2.so
-odm/lib/libsn100u_fw.so
-odm/lib64/libpnscr2.so
+# NFC - from RMX3151 - TP1A.220905.001
+odm/etc/init/init.pn8x.nfc.rc|5d568e326250eba9d9f8a555287a969aadc1be1d
+odm/etc/nfc/libnfc-nxp.conf_21692:vendor/etc/libnfc-nxp.conf|5d44cd26eafb8067c145b00799244f3a0bcf2e4f
+odm/etc/nfc/pnscr/libnfc-nxp-pnscr.conf:odm/etc/libnfc-nxp-pnscr.conf|17d120a63a2d1e63fbb12262807e03c469c2b233
+odm/lib/libpn553_fw.so|a8e29cc3ebb2e0df0fb505fc2da9c69a015680fb
+odm/lib/libpn557_fw.so|5fd4d17960d258563557d47d70c4d9d11a79fd15
+odm/lib/libpnscr2.so|644ff6bfce0e8b70f928a13826f9c391ea6a01ff
+odm/lib/libsn100u_fw.so|4adda2c9449cdc8f66fc3c653153f8b69c7dc78c
+odm/lib64/libpnscr2.so|966e88324c6cb2cc1460da8fed9866c942995c97
 
 # NVRAM
 vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
