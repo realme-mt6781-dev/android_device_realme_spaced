@@ -2335,6 +2335,20 @@ vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so|bb9ff554802e
 vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so|5e228669d2c575e38fc02a13404f31bc22494b87
 
 # IMS
+-framework/mediatek-common.jar
+-framework/mediatek-framework.jar
+framework/mediatek-gwsd.jar
+framework/mediatek-gwsdv2.jar
+-framework/mediatek-ims-base.jar
+-framework/mediatek-ims-common.jar
+framework/mediatek-ims-extension-plugin.jar
+framework/mediatek-ims-legacy.jar
+-framework/mediatek-telecom-common.jar
+-framework/mediatek-telephony-base.jar
+-framework/mediatek-telephony-common.jar
+framework/mediatek-wfo-legacy.jar
+-framework/oplus-framework.jar
+-framework/oplus-framework-telephony.jar
 odm/lib/vendor.oplus.hardware.ims@1.0.so
 odm/lib64/vendor.oplus.hardware.ims@1.0.so
 vendor/bin/hw/vendor.mediatek.hardware.mmagent@1.1-service
@@ -2382,6 +2396,9 @@ vendor/lib64/vendor.mediatek.hardware.clientapi@1.0.so
 vendor/lib64/vendor.mediatek.hardware.lbs@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mmagent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mmagent@1.1.so
+
+# ImsService
+-priv-app/ImsService/ImsService.apk|738b92467c052c0e95ee3fd748bde51ab0b90336
 
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@4.1-service.trustonic
