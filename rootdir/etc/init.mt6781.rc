@@ -1,9 +1,9 @@
 import /vendor/etc/init/hw/init.connectivity.rc
 import /vendor/etc/init/hw/init.mt6781.usb.rc
+import /vendor/etc/init/hw/init.mt6781.power.rc
 import /vendor/etc/init/hw/init.project.rc
 import /FWUpgradeInit.rc
 import /vendor/etc/init/hw/init.sensor_1_0.rc
-import /vendor/etc/init/hw/init.cgroup.rc
 import /vendor/etc/init/hw/init.modem.rc
 
 on early-init
@@ -85,6 +85,8 @@ on charger
 
 on fs
     wait_for_prop hwservicemanager.ready "true"
+
+    # mount fstab
     mount_all --early
     write /sys/block/zram0/comp_algorithm lz4
     write /proc/sys/vm/page-cluster 0
@@ -106,6 +108,10 @@ on post-fs
 
     chown system system /mnt/vendor/protect_s
     chmod 0770 /mnt/vendor/protect_s
+
+    # otg
+    chown system system /sys/devices/virtual/oplus_chg/usb/otg_switch
+    chmod 0666 /sys/devices/virtual/oplus_chg/usb/otg_switch
 
 on post-fs-data
     # boot time fs tune
@@ -601,7 +607,7 @@ on post-fs-data
     chmod 0664 sys/kernel/debug/rt-regmap/mt6360-4e/reg_addr
 
 on boot
-    write /proc/sys/vm/dirty_writeback_centisecs 300
+    write /proc/sys/vm/dirty_writeback_centisecs 500
     chmod 0660 /sys/power/autosleep
 
     # LEDS
@@ -628,8 +634,8 @@ on boot
     chmod 0660 /sys/devices/system/cpu/cpufreq/hotplug/cpu_num_base
     chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
     chmod 0660 /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-    chown system system /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
-    chmod 0660 /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
+    chown system system /sys/devices/system/cpu/cpufreq/policy6/scaling_governor
+    chmod 0660 /sys/devices/system/cpu/cpufreq/policy6/scaling_governor
     chown system system /sys/devices/system/cpu/rq-stats/htasks_thresh
     chmod 0660 /sys/devices/system/cpu/rq-stats/htasks_thresh
     chown system system /sys/devices/system/cpu/rq-stats/avg_htasks_thresh
@@ -811,14 +817,15 @@ on property:sys.boot_completed=1
     write /sys/block/dm-4/queue/read_ahead_kb 128
     write /sys/block/dm-5/queue/read_ahead_kb 128
 
-
+# initialize powerHAL when boot is completed
 on property:sys.boot_completed=1
-	
+    setprop vendor.mediatek.powerhal.init 1
+
+# OTG
+    write /sys/devices/virtual/oplus_chg/usb/otg_switch 1
+
     # stop bootprof
     write /proc/bootprof 0
-
-
-    write /sys/devices/virtual/oplus_chg/usb/otg_switch 1
 
 # Battery info
 on property:persist.vendor.mediatek.fg.disable=1
