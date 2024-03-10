@@ -180,9 +180,10 @@ PRODUCT_BOOT_JARS += \
     mediatek-ims-common \
     mediatek-telecom-common \
     mediatek-telephony-base \
-    mediatek-telephony-common \
-    oplus-framework \
-    oplus-framework-telephony
+    mediatek-telephony-common
+
+PRODUCT_PACKAGES += \
+    libshim_sink
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
@@ -385,12 +386,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.4.vendor \
     android.hardware.radio@1.5.vendor \
     android.hardware.radio@1.6.vendor
-
-# RCS 
-PRODUCT_PACKAGES += \
-    com.android.ims.rcsmanager \
-    RcsService \
-    PresencePolling
 
 # Rootdir
 PRODUCT_PACKAGES += \
