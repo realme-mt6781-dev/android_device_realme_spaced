@@ -814,10 +814,6 @@ on property:sys.boot_completed=1
     write /sys/block/dm-4/queue/read_ahead_kb 128
     write /sys/block/dm-5/queue/read_ahead_kb 128
 
-# initialize powerHAL when boot is completed
-on property:sys.boot_completed=1
-    setprop vendor.mediatek.powerhal.init 1
-
 # OTG
     write /sys/devices/virtual/oplus_chg/usb/otg_switch 1
 

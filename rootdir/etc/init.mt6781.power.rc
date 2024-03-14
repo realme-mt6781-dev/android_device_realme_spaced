@@ -76,6 +76,9 @@ on property:sys.boot_completed=1
     write /proc/sys/kernel/sched_migration_cost_ns 200000
     write /proc/perfmgr/boost_ctrl/eas_ctrl/sched_big_task_rotation 1
 
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1
+
     # restore perf. parameters
     write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "0 0"
     write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "1 0"

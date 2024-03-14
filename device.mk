@@ -347,8 +347,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/com.android.hotwordenrollment.common.util.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.android.hotwordenrollment.common.util.xml
 
 # Power
+$(call inherit-product, hardware/oplus/power-libperfmgr/power-libperfmgr.mk)
+
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.mediatek-libperfmgr \
     android.hardware.power@1.2.vendor
 
 PRODUCT_PACKAGES += \
@@ -427,8 +428,6 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/google/interfaces \
-    hardware/google/pixel \
     hardware/mediatek \
     hardware/oplus
 
