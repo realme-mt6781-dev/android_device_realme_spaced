@@ -52,9 +52,6 @@
 # NFC
 /dev/pn553                                                                                                             u:object_r:nfc_device:s0
 
-# Touch
-/vendor/bin/hw/vendor\.lineage\.touch-service\.oplus                                     u:object_r:hal_lineage_touch_default_exec:s0
-
 # Perfmgr
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.pixel-libperfmgr                                      u:object_r:hal_power_default_exec:s0
 
