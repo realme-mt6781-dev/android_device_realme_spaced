@@ -15,6 +15,14 @@ $(call inherit-product, device/realme/spaced/device.mk)
 # Inherit some common CipherOS stuff.
 $(call inherit-product, vendor/cipher/config/common_full_phone.mk)
 
+# CipherOS specific flags
+# Bootanimation res
+TARGET_BOOT_ANIMATION_RES := 1080
+# Faceunlock Support
+TARGET_FACE_UNLOCK_SUPPORTED := true
+# Maintainer
+CIPHER_MAINTAINER := HELLINFIX
+
 PRODUCT_NAME := cipher_spaced
 PRODUCT_DEVICE := spaced
 PRODUCT_MANUFACTURER := Realme
