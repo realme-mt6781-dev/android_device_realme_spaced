@@ -82,3 +82,11 @@ genfscon sysfs /devices/platform/charger/power_supply/ac/wakeup153              
 genfscon sysfs /devices/platform/charger/power_supply/usb/wakeup154                                     u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/charger/power_supply/battery/wakeup155                                 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/odm/odm:oplus,track-charge/track/wakeup/wakeup132                      u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/charger/power_supply/battery/wakeup154                                  u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/charger/power_supply/ac/wakeup152                                      u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/odm/odm:oplus,track-charge/track/wakeup/wakeup130                      u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/1a000000.camisp/wakeup/wakeup100                                       u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/1000d000.pwrap/1000d000.pwrap:mt6358-pmic/mt6358-rtc/wakeup/wakeup117  u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/charger/power_supply/usb/wakeup153                                     u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/11014000.spi4/spi_master/spi4/spi4.0/wakeup/wakeup113                  u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/15020000.imgsys_config/wakeup/wakeup98                                 u:object_r:sysfs_wakeup:s0
