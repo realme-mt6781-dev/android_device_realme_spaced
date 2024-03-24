@@ -1,15 +1,17 @@
+on property:init.svc.vendor.charger=running
+    # Enable UFS powersaving
+    write /sys/devices/platform/11270000.ufshci/clkgate_enable 1
 
-on post-fs
-
-    # boot perf. tune
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "0 100"
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "1 100"
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "2 100"
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "3 100"
+    # Keep one LITTLE and one big
+    write /sys/devices/system/cpu/cpu1/online 0
+    write /sys/devices/system/cpu/cpu2/online 0
+    write /sys/devices/system/cpu/cpu3/online 0
+    write /sys/devices/system/cpu/cpu4/online 0
+    write /sys/devices/system/cpu/cpu5/online 0
+    write /sys/devices/system/cpu/cpu7/online 0
 
 on init
-
- # Create energy-aware scheduler tuning nodes
+    # Create energy-aware scheduler tuning nodes
     mkdir /dev/stune/foreground
     mkdir /dev/stune/background
     mkdir /dev/stune/top-app
@@ -21,9 +23,12 @@ on init
     chown system system /dev/stune/rt
     chown system system /dev/stune/tasks
     chown system system /dev/stune/foreground/tasks
+    chown system system /dev/stune/foreground/schedtune.prefer_idle
     chown system system /dev/stune/background/tasks
     chown system system /dev/stune/top-app/tasks
+    chown system system /dev/stune/top-app/schedtune.prefer_idle
     chown system system /dev/stune/rt/tasks
+    chown system system /dev/stune/rt/schedtune.prefer_idle
     chmod 0664 /dev/stune/tasks
     chmod 0664 /dev/stune/foreground/tasks
     chmod 0664 /dev/stune/background/tasks
@@ -36,11 +41,26 @@ on init
 
     # create an stune group for camera-specific processes
     mkdir /dev/stune/camera-daemon
-    write /dev/stune/camera-daemon/schedtune.prefer_idle 0
-    write /dev/stune/camera-daemon/schedtune.boost 0
     chown system system /dev/stune/camera-daemon
     chown system system /dev/stune/camera-daemon/tasks
     chmod 0664 /dev/stune/camera-daemon/tasks
+    write /dev/stune/camera-daemon/schedtune.prefer_idle 0
+    write /dev/stune/camera-daemon/schedtune.boost 0
+
+    # create io boost group
+    mkdir /dev/stune/io
+    chown system system /dev/stune/io
+    chown system system /dev/stune/io/tasks
+    chmod 0666 /dev/stune/io/tasks
+
+    # Disable UFS powersaving
+    write /sys/devices/platform/11270000.ufshci/clkgate_enable 0
+
+    # Boot time FS tuning
+    write /sys/block/mmcblk0/queue/iostats 0
+    write /sys/block/mmcblk0/queue/nr_requests 256
+    write /sys/block/sdc/queue/iostats 0
+    write /sys/block/sdc/queue/nr_requests 256
 
     # Configure governor settings for little cluster
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedutil"
@@ -52,45 +72,48 @@ on init
     write /sys/devices/system/cpu/cpufreq/policy6/schedutil/up_rate_limit_us 500
     write /sys/devices/system/cpu/cpufreq/policy6/schedutil/down_rate_limit_us 20000
 
-    # create io boost group
-    mkdir /dev/stune/io
-    chown system system /dev/stune/io
-    chown system system /dev/stune/io/tasks
-    chmod 0666 /dev/stune/io/tasks
+    # update cpus for cpuset cgroup
+    write /dev/cpuset/foreground/cpus 0-2,4-7
+    write /dev/cpuset/foreground/boost/cpus 0-7
+    write /dev/cpuset/background/cpus 0-2
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/top-app/cpus 0-7
 
-    # Turn on scheduler boost at boot
-    write /dev/stune/schedtune.boost 100
-
-on property:sys.boot_completed=1
-
-    write /sys/devices/system/cpu/eas/enable 1
-    write /proc/cpufreq/cpufreq_sched_disable 0
-
-    chown system system /dev/stune/foreground/schedtune.prefer_idle
-    chown system system /dev/stune/top-app/schedtune.prefer_idle
-    chown system system /dev/stune/rt/schedtune.prefer_idle
+    # Set default SchedTune values
     write /dev/stune/foreground/schedtune.prefer_idle 0
     write /dev/stune/top-app/schedtune.prefer_idle 0
     write /dev/stune/rt/schedtune.prefer_idle 0
     write /dev/stune/top-app/schedtune.boost 1
+
+on enable-low-power
+    # Enable UFS powersaving
+    write /sys/devices/platform/11270000.ufshci/clkgate_enable 1
+
+    # Runtime FS tuning
+    # we should adjust the setting upon boot_complete for runtime performance
+    write /sys/block/mmcblk0/queue/iostats 1
+    write /sys/block/mmcblk0/queue/read_ahead_kb 512
+    write /sys/block/mmcblk0/queue/nr_requests 128
+    write /sys/block/sdc/queue/iostats 1
+    write /sys/block/sdc/queue/read_ahead_kb 512
+    write /sys/block/sdc/queue/nr_requests 128
+    write /sys/block/dm-0/queue/read_ahead_kb 128
+    write /sys/block/dm-1/queue/read_ahead_kb 128
+    write /sys/block/dm-2/queue/read_ahead_kb 128
+    write /sys/block/dm-3/queue/read_ahead_kb 128
+    write /sys/block/dm-4/queue/read_ahead_kb 128
+    write /sys/block/dm-5/queue/read_ahead_kb 128
+
+    write /proc/cpufreq/cpufreq_sched_disable 0
     write /proc/sys/kernel/sched_migration_cost_ns 200000
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/sched_big_task_rotation 1
-
-    # Enable PowerHAL hint processing
-    setprop vendor.powerhal.init 1
-
-    # restore perf. parameters
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "0 0"
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "1 0"
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "2 0"
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "3 0"
-    write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1 -1 -1"
-    write /sys/devices/platform/boot_dramboost/dramboost/dramboost 0
 
     # Configure DVFS
     write /sys/kernel/ged/hal/dvfs_margin_value 130
     write /sys/kernel/ged/hal/timer_base_dvfs_margin 798
     write /sys/kernel/ged/hal/loading_base_dvfs_step 4
 
-    # Turn off scheduler boost after boot
-    write /dev/stune/schedtune.boost 0
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1
+
+on property:sys.boot_completed=1
+    trigger enable-low-power
