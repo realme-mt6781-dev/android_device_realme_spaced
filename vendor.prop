@@ -260,6 +260,9 @@ ro.vendor.mediatek.version.branch=alps-mp-s0.mp1.tc16sp-pr9
 ro.vendor.mediatek.version.release=alps-mp-s0.mp1.tc16sp-pr9-V1
 ro.vendor.mtk_gamehdr_support=1
 
+# VNDK
+ro.vndk.version=35
+
 # WiFi
 ro.vendor.wifi.sap.interface=ap0
 ro.vendor.mtk_wappush_support=1
