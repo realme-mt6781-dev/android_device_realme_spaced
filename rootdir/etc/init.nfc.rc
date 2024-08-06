@@ -1,0 +1,12 @@
+on early-init
+    exec u:r:vendor_init:s0 -- /vendor/bin/nfc_detect.sh
+
+on property:ro.boot.product.vendor.sku=nfc
+    enable vendor.nfc_hal_service
+
+service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
+    override
+    disabled
+    class hal
+    user nfc
+    group nfc
