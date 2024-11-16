@@ -1,0 +1,5 @@
+runtime_resource_overlay {
+    name: "SettingsProviderResOverlaySpaced",
+    resource_dirs: ["res"],
+    vendor: true,
+}
