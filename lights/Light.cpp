@@ -72,11 +72,13 @@ static uint32_t getBrightness(const HwLightState& state) {
     blue = state.color & 0xFF;
 
     /*
-     * Scale RGB brightness using Alpha brightness.
+     * Scale RGB brightness if the Alpha brightness is within the proper range (0-255).
      */
-    red = red * alpha / 0xFF;
-    green = green * alpha / 0xFF;
-    blue = blue * alpha / 0xFF;
+    if (alpha > 0 && alpha < 255) {
+        red = red * alpha / 0xFF;
+        green = green * alpha / 0xFF;
+        blue = blue * alpha / 0xFF;
+    }
 
     return (77 * red + 150 * green + 29 * blue) >> 8;
 }
