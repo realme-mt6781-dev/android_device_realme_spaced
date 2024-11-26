@@ -1,12 +1,16 @@
-on early-init
-    exec u:r:vendor_init:s0 -- /vendor/bin/nfc_detect.sh
-
-on property:ro.boot.product.vendor.sku=nfc
-    enable vendor.nfc_hal_service
-
-service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
-    override
-    disabled
-    class hal
+service vendor.nfc_detect /vendor/bin/nfc_detect.sh
+    class early_hal
     user nfc
     group nfc
+    oneshot
+
+service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service.nxp
+    class early_hal
+    user nfc
+    group nfc drmrpc system
+    override
+    disabled
+
+on property:ro.vendor.device.variant=nfc
+    setprop ro.boot.product.vendor.sku nfc
+    enable vendor.nfc_hal_service

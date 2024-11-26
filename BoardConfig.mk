@@ -164,9 +164,6 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/configs/vintf/device_framework_compatibility_matrix.xml \
     hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml
 
-DEVICE_MANIFEST_SKUS += nfc
-DEVICE_MANIFEST_NFC_FILES := $(DEVICE_PATH)/manifest_nfc.xml
-
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/props/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/props/vendor.prop
