@@ -124,6 +124,12 @@
                              samplingRates="8000 16000 32000 44100 48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO"/>
                 </mixPort>
+                <!--Spatial Audio-->
+                <mixPort name="immersive_out" role="source" flags="AUDIO_OUTPUT_FLAG_SPATIALIZER">
+                    <profile name="" format="AUDIO_FORMAT_PCM_FLOAT"
+                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                <!--Spatial Audio-->
+                </mixPort>
                 <mixPort name="hifi_playback" role="source"/>
                 <mixPort name="hifi_input" role="sink"/>
             </mixPorts>
@@ -253,11 +259,11 @@
                 <route type="mix" sink="Earpiece"
                        sources="primary output,deep_buffer,fast,mmap_no_irq_out,voip_rx,Voice Call In"/>
                 <route type="mix" sink="Speaker"
-                       sources="primary output,deep_buffer,fast,mmap_no_irq_out,FM Tuner In,voip_rx,Voice Call In"/>
+                       sources="primary output,deep_buffer,fast,mmap_no_irq_out,FM Tuner In,voip_rx,Voice Call In,immersive_out"/>
                 <route type="mix" sink="Wired Headset"
-                       sources="primary output,deep_buffer,fast,mmap_no_irq_out,FM Tuner In,voip_rx,Voice Call In"/>
+                       sources="primary output,deep_buffer,fast,mmap_no_irq_out,FM Tuner In,voip_rx,Voice Call In,immersive_out"/>
                 <route type="mix" sink="Wired Headphones"
-                       sources="primary output,deep_buffer,fast,mmap_no_irq_out,FM Tuner In,voip_rx,Voice Call In"/>
+                       sources="primary output,deep_buffer,fast,mmap_no_irq_out,FM Tuner In,voip_rx,Voice Call In,immersive_out"/>
                 <route type="mix" sink="AUX Digital Out"
                        sources="primary output"/>
                 <route type="mix" sink="USB Device Out"
@@ -265,11 +271,11 @@
                 <route type="mix" sink="USB Headset Out"
                        sources="primary output,deep_buffer,fast,FM Tuner In,voip_rx,Voice Call In,hifi_playback"/>
                 <route type="mix" sink="BT SCO"
-                       sources="primary output,deep_buffer,fast,voip_rx,Voice Call In"/>
+                       sources="primary output,deep_buffer,fast,voip_rx,Voice Call In,immersive_out"/>
                 <route type="mix" sink="BT SCO Headset"
-                       sources="primary output,deep_buffer,fast,voip_rx,Voice Call In"/>
+                       sources="primary output,deep_buffer,fast,voip_rx,Voice Call In,immersive_out"/>
                 <route type="mix" sink="BT SCO Car Kit"
-                       sources="primary output,deep_buffer,fast,voip_rx,Voice Call In"/>
+                       sources="primary output,deep_buffer,fast,voip_rx,Voice Call In,immersive_out"/>
                 <route type="mix" sink="Analog Dock Headset"
                        sources="primary output"/>
                 <route type="mix" sink="Digital Dock Headset"
