@@ -37,13 +37,8 @@ odm/lib64/libnxprecord.so
 odm/lib64/libnxpspeech.so
 odm/lib64/libsi_sixth.so
 vendor/bin/atci_service
-vendor/bin/atcid
-vendor/bin/audiocmdservice_atci
 vendor/bin/mt6660_calibration
 vendor/bin/rt5512_calibration
-vendor/etc/init/atci_service.rc
-vendor/etc/init/atcid.rc
-vendor/etc/init/audiocmdservice_atci.rc
 vendor/lib/hw/audio.primary.mt6781.so
 vendor/lib/hw/audio.r_submix.mt6781.so
 vendor/lib/libalsautils.so:vendor/lib/libalsautils-v31.so;FIX_SONAME
@@ -126,7 +121,6 @@ vendor/lib64/liboplus_audio_config.so
 vendor/lib64/librt_extamp_intf.so
 vendor/lib64/libspeech_enh_lib.so;FIX_SONAME
 vendor/lib64/libspeechparser_vendor.so
-vendor/lib64/vendor.mediatek.hardware.atci@1.0.so
 vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
 vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so

@@ -118,11 +118,6 @@
         <fqname>@2.0::IApuwareUtils/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.mediatek.hardware.atci</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IAtcid/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.mediatek.hardware.bluetooth.audio</name>
         <transport>hwbinder</transport>
         <fqname>@2.2::IBluetoothAudioProvidersFactory/default</fqname>
