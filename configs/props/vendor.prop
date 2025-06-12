@@ -124,6 +124,7 @@ ro.vendor.fm.platform=mt6631_6635
 # HWUI
 debug.hwui.target_cpu_time_percent=30
 debug.hwui.use_hint_manager=true
+debug.sf.enable_adpf_cpu_hint=true
 
 # Media
 ro.vendor.jpeg_decode_sw_opt=1
