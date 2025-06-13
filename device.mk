@@ -215,6 +215,13 @@ PRODUCT_PACKAGES += \
    libkeystore-engine-wifi-hidl \
    libnetutils.vendor
 
+
+# Kernel
+TARGET_KERNEL_DIR := $(LOCAL_PATH)-kernel
+TARGET_PREBUILT_KERNEL := $(TARGET_KERNEL_DIR)/Image.gz
+
+PRODUCT_COPY_FILES += $(TARGET_PREBUILT_KERNEL):kernel
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light-service.spaced
