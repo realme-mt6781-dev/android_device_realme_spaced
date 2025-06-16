@@ -16,11 +16,10 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 PRODUCT_NAME := lineage_spaced
 PRODUCT_DEVICE := spaced
-PRODUCT_MANUFACTURER := Realme
-PRODUCT_BRAND := Realme
-PRODUCT_MODEL := Realme 8i
+PRODUCT_MANUFACTURER := realme
+PRODUCT_BRAND := realme
+PRODUCT_MODEL := RMX3286
 
 PRODUCT_GMS_CLIENTID_BASE := android-realme
 
-
-BUILD_FINGERPRINT := realme/RMX3151/RE54B4L1:13/SP1A.210812.016/R.15e21b8+bde:user/release-keys
+BUILD_FINGERPRINT := realme/RMX3286/RE54B4L1:13/SP1A.210812.016/R.1c05817+2a8bc:user/release-keys
