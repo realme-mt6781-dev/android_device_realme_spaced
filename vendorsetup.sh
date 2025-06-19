@@ -14,4 +14,7 @@ fi
 OPLUS=hardware/oplus/Android.bp
 if ! [ -a $OPLUS ]; then git clone https://github.com/LineageOS/android_hardware_oplus hardware/oplus
 fi
+VT-IMS=vendor/mediatek/ims/ims.mk
+if ! [ -a $VT-IMS ]; then git clone https://github.com/techyminati/android_vendor_mediatek_ims.git vendor/mediatek/ims
+fi
 echo end cloning

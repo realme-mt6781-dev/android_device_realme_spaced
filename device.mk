@@ -10,6 +10,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 # Dalvik VM Configuration
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
+# IMS-Vendor
+$(call inherit-product-if-exists, vendor/mediatek/ims/ims.mk)
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30
 
@@ -144,6 +147,9 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_PACKAGES += \
     libjni_shim
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/permissions/privapp-permissions-com.mediatek.engineermode.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.mediatek.engineermode.xml
+
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -180,10 +186,6 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor \
     libhidlmemory.vendor
-
-# IMS
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
 
 # Init
 $(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):libinit_spaced)
@@ -292,7 +294,6 @@ PRODUCT_PACKAGES += \
     SettingsOverlaySpaced \
     SettingsProviderResOverlaySpaced \
     SystemUIOverlaySpaced \
-    TelephonyOverlaySpaced \
     WifiResOverlaySpaced \
     TetheringResOverlaySpaced \
     CarrierConfigOverlaySpaced \
@@ -498,7 +499,6 @@ PRODUCT_PACKAGES += \
     libstagefright_foundation-v33
 
 PRODUCT_PACKAGES += \
-    libshim_ui\
     libbase_shim \
     libprocessgroup_shim
 
