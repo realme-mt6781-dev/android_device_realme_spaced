@@ -15,6 +15,8 @@
 -->
 
 <MediaCodecs>
+    <!-- Include Dolby Audio MediaCodecs -->
+    <Include href="media_codecs_dolby_audio.xml" />
     <Settings>
         <!-- disable TV and telephony domains by default. These must be opted in by OEMs -->
         <Domain name="telephony" enabled="false" />
