@@ -164,6 +164,16 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CCIFreqMode",
+      "Path": "/proc/cpufreq/cpufreq_cci_mode",
+      "Values": [
+        "0",
+        "1"
+      ],
+      "ResetOnInit": true,
+      "DefaultIndex": 0
+    },
+    {
       "Name": "SchedBoost",
       "Path": "/proc/perfmgr/boost_ctrl/eas_ctrl/sched_boost",
       "Values": [
@@ -252,6 +262,12 @@
       "Node": "TAUclampMin",
       "Duration": 0,
       "Value": "0"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "CCIFreqMode",
+      "Duration": 0,
+      "Value": "1"
     },
     {
       "PowerHint": "LAUNCH",
