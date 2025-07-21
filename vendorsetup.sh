@@ -2,9 +2,6 @@ echo start cloning repos
 VT=vendor/realme/spaced/spaced-vendor.mk
 if ! [ -a $VT ]; then git clone https://github.com/realme-mt6781-dev/android_vendor_realme_spaced vendor/realme/spaced
 fi
-KT=kernel/realme/mt6781/build.sh
-if ! [ -a $KT ]; then git clone https://github.com/realme-mt6781-dev/android_kernel_realme_mt6781.git kernel/realme/mt6781
-fi
 MTK_SEPOLICY=device/mediatek/sepolicy_vndr/SEPolicy.mk
 if ! [ -a $MTK_SEPOLICY ]; then git clone https://github.com/LineageOS/android_device_mediatek_sepolicy_vndr device/mediatek/sepolicy_vndr
 fi
