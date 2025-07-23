@@ -174,15 +174,6 @@
       "DefaultIndex": 0
     },
     {
-      "Name": "SchedBoost",
-      "Path": "/proc/perfmgr/boost_ctrl/eas_ctrl/sched_boost",
-      "Values": [
-        "1",
-        "0"
-      ],
-      "ResetOnInit": true
-    },
-    {
       "Name": "DoubleTapToWake",
       "Path": "/proc/touchpanel/double_tap_enable",
       "Values": [
@@ -308,12 +299,6 @@
     {
       "PowerHint": "LAUNCH",
       "Node": "DRAMOppMin",
-      "Duration": 3000,
-      "Value": "1"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "SchedBoost",
       "Duration": 3000,
       "Value": "1"
     },

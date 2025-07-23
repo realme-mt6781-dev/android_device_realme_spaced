@@ -40,11 +40,6 @@ on post-fs-data
     write /sys/block/sdc/queue/iostats 0
     write /sys/block/sdc/queue/nr_requests 256
 
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "0 100"
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "1 100"
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "2 100"
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "3 100"
-
     # Power Manager
     write /sys/power/pm_async 0
     write /sys/power/pm_freeze_timeout 2000
@@ -73,20 +68,10 @@ on property:sys.boot_completed=1
     write /sys/block/sdb/queue/nr_requests 64
     write /sys/block/sdc/queue/nr_requests 64
 
-
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "0 0"
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "1 0"
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "2 0"
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "3 0"
-    write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1"
-
 	write /sys/devices/platform/10012000.dvfsrc/helio-dvfsrc/dvfsrc_req_ddr_opp -1
 
     # Configure scheduler parameters
     write /proc/sys/kernel/sched_migration_cost_ns 200000
-
-    # Enable big task rotation
-    write /proc/perfmgr/boost_ctrl/eas_ctrl/sched_big_task_rotation 1
 
     # Configure DVFS
     write /sys/kernel/ged/hal/dvfs_margin_value 130
