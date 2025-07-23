@@ -349,6 +349,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     PowerOffAlarm
 
+# Privapp permissions whitelisting
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.control_privapp_permissions=log
+
 # Lineage-Specific overlays
 PRODUCT_PACKAGES += \
     LineageApertureOverlaySpaced \
