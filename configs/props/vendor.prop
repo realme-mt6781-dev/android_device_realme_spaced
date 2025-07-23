@@ -171,6 +171,9 @@ ro.vendor.mtk_gps_support=1
 ro.vendor.gps.chrdev=gps_drv
 ro.vendor.mtk_log_hide_gps=0
 
+# Launcher
+ro.launcher.blur.appLaunch=0
+
 # Radio
 persist.vendor.radio.fd.counter=150
 persist.vendor.radio.fd.off.counter=50
