@@ -125,11 +125,6 @@ Only the three quirks included above are recognized at this point:
     </Encoders>
     <Decoders>
         <!-- MTK codec -->
-        <MediaCodec name="c2.mtk.mpeg4.decoder" type="video/mp4v-es" update="true">
-            <Limit name="measured-frame-rate-176x144" range="350-1056" />
-            <Limit name="measured-frame-rate-480x360" range="332-730" />
-            <Limit name="measured-frame-rate-1280x720" range="91-201" />
-        </MediaCodec>
         <MediaCodec name="c2.mtk.h263.decoder" type="video/3gpp" update="true">
             <Limit name="measured-frame-rate-176x144" range="492-1083" />
             <Limit name="measured-frame-rate-352x288" range="408-899" />

@@ -1669,7 +1669,6 @@ vendor/bin/recordevent
 vendor/bin/replayevent
 vendor/bin/vpud
 vendor/etc/init/vpud.rc
-vendor/etc/mtk_platform_codecs_config.xml
 vendor/lib/AVCSecureVdecCA.so
 vendor/lib/HEVCSecureVdecCA.so
 vendor/lib/VP9SecureVdecCA.so
