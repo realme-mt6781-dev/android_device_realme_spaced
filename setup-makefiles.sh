@@ -46,7 +46,7 @@ function lib_to_package_fixup_vendor_variants() {
         liboplus_platform_hwi.so)
             echo "${1}_vendor"
             ;;
-        vendor.oplus.hardware.radio-V1-ndk_platform.so)                
+        vendor.oplus.hardware.radio-V1-ndk_platform.so)
             echo "${1}_vendor"
             ;;
         vendor.oplus.hardware.biometrics.fingerprint@2.1)

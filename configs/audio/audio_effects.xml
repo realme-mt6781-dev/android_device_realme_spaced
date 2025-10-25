@@ -34,7 +34,7 @@
         <!--DOLBY END-->
         <!--Spatial Audio-->
         <library name="spatializer" path="libspatialaudio.so"/>
-	<!--Spatial Audio-->  
+	<!--Spatial Audio-->
     </libraries>
 
     <!-- list of effects to load.

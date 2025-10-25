@@ -1121,8 +1121,6 @@ vendor/lib64/libm4u.so
 vendor/lib64/libmidasserviceintf.so
 vendor/lib64/libmtkcam.atmseventmgr.so
 vendor/lib64/libmtkcam.eventcallback.so
-vendor/lib64/libmtkcam.eventcallback.so
-vendor/lib64/libmtkcam.eventcallback.so
 vendor/lib64/libmtkcam.featurepipe.capture.so
 vendor/lib64/libmtkcam.featurepipe.streaming.so
 vendor/lib64/libmtkcam.featurepipe.vsdof_util.so
@@ -1706,7 +1704,6 @@ vendor/lib/libvp9dec_sa.ca7.so
 vendor/lib/libvpu.so
 vendor/lib/libvpu5.so
 vendor/lib/libvpud_vcodec.so
-vendor/lib64/AVCSecureVdecCA.so
 vendor/lib64/AVCSecureVdecCA.so
 vendor/lib64/HEVCSecureVdecCA.so
 vendor/lib64/VP9SecureVdecCA.so

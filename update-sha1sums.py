@@ -28,7 +28,6 @@ with open('proprietary-files.txt', 'r') as f:
 vendorPath = '../../../vendor/' + vendor + '/' + device + '/proprietary'
 needSHA1 = False
 
-
 def cleanup():
     for index, line in enumerate(lines):
         # Skip empty or commented lines
@@ -37,7 +36,6 @@ def cleanup():
 
         # Drop SHA1 hash, if existing
         lines[index] = line.split('|')[0]
-
 
 def update():
     for index, line in enumerate(lines):
@@ -62,7 +60,6 @@ def update():
                 hash = sha1(f.read()).hexdigest()
 
             lines[index] = '%s|%s' % (line, hash)
-
 
 if len(sys.argv) == 2 and sys.argv[1] == '-c':
     cleanup()

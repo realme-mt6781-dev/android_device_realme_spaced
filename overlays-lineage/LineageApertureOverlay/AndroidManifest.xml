@@ -6,7 +6,7 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.lineageos.aperture.Spaced">
-    
+
     <overlay
         android:isStatic="true"
         android:priority="100"
