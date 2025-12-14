@@ -110,6 +110,9 @@ debug.sf.enable_transaction_tracing=false
 debug.sf.enable_gl_backpressure=0
 debug.sf.enable_hwc_vds=0
 debug.sf.predict_hwc_composition_strategy=0
+debug.sf.region_sampling_duration_ns=8333333
+debug.sf.region_sampling_period_ns=99999984
+debug.sf.region_sampling_timer_timeout_ns=99999984
 
 # DRAM
 ro.vendor.mtk_config_max_dram_size=0x800000000
