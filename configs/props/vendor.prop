@@ -107,12 +107,18 @@ ro.surface_flinger.set_touch_timer_ms=200
 debug.sf.auto_latch_unsignaled=1
 debug.sf.enable_egl_image_tracker=0
 debug.sf.enable_transaction_tracing=false
-debug.sf.enable_gl_backpressure=0
+debug.sf.enable_gl_backpressure=1
 debug.sf.enable_hwc_vds=0
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.region_sampling_duration_ns=8333333
 debug.sf.region_sampling_period_ns=99999984
 debug.sf.region_sampling_timer_timeout_ns=99999984
+debug.sf.high_fps_early_gl_phase_offset_ns=-12666667
+debug.sf.high_fps_early_phase_offset_ns=-12666667
+debug.sf.high_fps_late_app_phase_offset_ns=-8000000
+debug.sf.high_fps_late_sf_phase_offset_ns=-12666667
+ro.surface_flinger.vsync_event_phase_offset_ns=8400000
+ro.surface_flinger.vsync_sf_event_phase_offset_ns=-10933333
 
 # DRAM
 ro.vendor.mtk_config_max_dram_size=0x800000000
