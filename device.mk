@@ -366,7 +366,8 @@ PRODUCT_PACKAGES += \
     LineageApertureOverlaySpaced \
     PowerOffAlarmOverlaySpaced \
     LineageDialerOverlaySpaced \
-    LineageSDKOverlaySpaced
+    LineageSDKOverlaySpaced \
+    LineageSettingsProviderOverlaySpaced
 
 # Power
 PRODUCT_PACKAGES += \
