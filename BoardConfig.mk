@@ -191,3 +191,19 @@ WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 
 # Inherit the proprietary files
 include vendor/realme/spaced/BoardConfigVendor.mk
+
+# CPU/Performance
+PERF_GOV_SUPPORTED := true
+PERF_DEFAULT_GOV := performance
+PERF_ANIM_OVERRIDE := true
+
+# GPU - Using the verified path from your cat command
+GPU_FREQS_PATH := /proc/gpufreq/gpufreq_opp_dump
+GPU_MIN_FREQ_PATH := /proc/gpufreq/gpufreq_opp_dump # MTK often uses the same node for both
+
+# Refresh Rate - realme 8i specs confirm these 6 levels
+# 30Hz, 48Hz, 50Hz, 60Hz, 90Hz, 120Hz
+TARGET_SUPPORTED_REFRESH_RATES := 30,48,50,60,90,120
+
+# Graphics Optimization
+TARGET_ENABLE_BLUR := true

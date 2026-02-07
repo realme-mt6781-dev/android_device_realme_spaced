@@ -20,3 +20,4 @@ ro.vendor.device.variant           u:object_r:vendor_variant_prop:s0
 
 # Light
 persist.vendor.light.             u:object_r:vendor_persist_light_prop:s0
+

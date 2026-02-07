@@ -26,11 +26,11 @@ genfscon proc /fp_id                                u:object_r:vendor_proc_finge
 genfscon proc /fp_kernel_event                      u:object_r:vendor_proc_fingerprint:s0
 
 # GPU
-genfscon sysfs /kernel/gpu/gpu_min_clock u:object_r:vendor_sysfs_gpu:s0
-genfscon sysfs /kernel/gpu/gpu_max_clock u:object_r:vendor_sysfs_gpu:s0
-genfscon sysfs /devices/platform/13000000.mali/js_ctx_scheduling_mode u:object_r:vendor_sysfs_gpu:s0
-genfscon sysfs /devices/platform/13000000.mali/js_scheduling_period u:object_r:vendor_sysfs_gpu:s0
-genfscon sysfs /devices/platform/13000000.mali/dvfs_period u:object_r:vendor_sysfs_gpu:s0
+# genfscon sysfs /kernel/gpu/gpu_min_clock u:object_r:vendor_sysfs_gpu:s0
+# genfscon sysfs /kernel/gpu/gpu_max_clock u:object_r:vendor_sysfs_gpu:s0
+# genfscon sysfs /devices/platform/13000000.mali/js_ctx_scheduling_mode u:object_r:vendor_sysfs_gpu:s0
+# genfscon sysfs /devices/platform/13000000.mali/js_scheduling_period u:object_r:vendor_sysfs_gpu:s0
+# genfscon sysfs /devices/platform/13000000.mali/dvfs_period u:object_r:vendor_sysfs_gpu:s0
 
 # NFC
 genfscon proc /oplus_nfc/chipset                    u:object_r:vendor_proc_nfc_chipset:s0
@@ -87,3 +87,18 @@ genfscon sysfs /devices/platform/1000d000.pwrap/1000d000.pwrap:mt6358-pmic/mt635
 genfscon sysfs /devices/platform/charger/power_supply/usb/wakeup153                                     u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/11014000.spi4/spi_master/spi4/spi4.0/wakeup/wakeup113                  u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/15020000.imgsys_config/wakeup/wakeup98                                 u:object_r:sysfs_wakeup:s0
+
+# GPU Boost - Verified for realme 8i (spaced)
+genfscon sysfs /devices/platform/13000000.mali/available_frequencies   u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/13000000.mali/hint_min_freq           u:object_r:sysfs_gpu:s0
+
+# GPU - Basic Mali Nodes
+genfscon sysfs /kernel/gpu/gpu_min_clock                               u:object_r:sysfs_gpu:s0
+genfscon sysfs /kernel/gpu/gpu_max_clock                               u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/13000000.mali/js_ctx_scheduling_mode  u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/13000000.mali/js_scheduling_period     u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/13000000.mali/dvfs_period             u:object_r:sysfs_gpu:s0
+
+# Performance Mode (Standard Labeling)
+genfscon proc /sys/vm/dirty_ratio                   u:object_r:proc_dirty:s0
+# genfscon proc /sys/kernel/sched_migration_cost_ns   u:object_r:proc_sched:s0

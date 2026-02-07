@@ -10,3 +10,10 @@ get_prop(vendor_init, vendor_variant_prop)
 
 set_prop(vendor_init, vendor_mtk_pq_prop)
 set_prop(vendor_init, vendor_persist_light_prop)
+
+# Allow init to tune the performance nodes that are already labeled
+allow init proc_dirty:file rw_file_perms;
+allow init proc_drop_caches:file rw_file_perms;
+allow init proc_sched:file rw_file_perms;
+allow init vendor_sysfs_gpu:file rw_file_perms;
+

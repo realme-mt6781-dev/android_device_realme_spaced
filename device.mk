@@ -545,3 +545,12 @@ PRODUCT_COPY_FILES += \
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/realme/spaced/spaced-vendor.mk)
+
+# Fix for 120Hz Flicker
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.disable_hwc=1
+
+# Performance Properties
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.perf.scroll_opt=true \
+    persist.vendor.perf.scroll_opt.heavy_app=2

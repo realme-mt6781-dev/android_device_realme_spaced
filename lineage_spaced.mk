@@ -14,6 +14,17 @@ $(call inherit-product, device/realme/spaced/device.mk)
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+#
+# Device Info for Axion UI - realme 8i (spaced)
+#
+AXION_MAINTAINER := DEEZNUTZ
+AXION_PROCESSOR := MediaTek_Helio_G96
+AXION_CAMERA_REAR_INFO := 50,2,2
+AXION_CAMERA_FRONT_INFO := 16
+
+# Graphics & Performance
+TARGET_ENABLE_BLUR := true
+
 PRODUCT_NAME := lineage_spaced
 PRODUCT_DEVICE := spaced
 PRODUCT_MANUFACTURER := realme
