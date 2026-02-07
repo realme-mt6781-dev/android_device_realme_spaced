@@ -1027,10 +1027,6 @@ vendor/lib64/libSonyIMX519PdafLibrary.so
 vendor/lib64/libSonyIMX519PdafLibraryWrapper.so
 vendor/lib64/libaaa_ltm.so
 vendor/lib64/libaaa_ltmx.so
-vendor/lib64/libaal_cust.so
-vendor/lib64/libaal_key.so
-vendor/lib64/libaal_mtk.so
-vendor/lib64/libaalservice.so
 vendor/lib64/libaiawb_moon.so
 vendor/lib64/libaiawb_moon_model.so
 vendor/lib64/libaiawb_p1ggm.so
@@ -1120,8 +1116,6 @@ vendor/lib64/libimagebuffer_wrapper.so
 vendor/lib64/libm4u.so
 vendor/lib64/libmidasserviceintf.so
 vendor/lib64/libmtkcam.atmseventmgr.so
-vendor/lib64/libmtkcam.eventcallback.so
-vendor/lib64/libmtkcam.eventcallback.so
 vendor/lib64/libmtkcam.eventcallback.so
 vendor/lib64/libmtkcam.featurepipe.capture.so
 vendor/lib64/libmtkcam.featurepipe.streaming.so
@@ -1510,8 +1504,6 @@ vendor/firmware/soc2_2_ram_wifi_2_1_hdr.bin
 vendor/firmware/soc2_2_ram_wifi_2a_1_hdr.bin
 
 # Firmware (haptic)
-odm/firmware/awinic_haptic_gun_params.bin
-odm/firmware/awinic_haptic_params.bin
 
 # Fingerprint
 odm/bin/hw/vendor.oplus.hardware.biometrics.fingerprint@2.1-service
@@ -1706,7 +1698,6 @@ vendor/lib/libvp9dec_sa.ca7.so
 vendor/lib/libvpu.so
 vendor/lib/libvpu5.so
 vendor/lib/libvpud_vcodec.so
-vendor/lib64/AVCSecureVdecCA.so
 vendor/lib64/AVCSecureVdecCA.so
 vendor/lib64/HEVCSecureVdecCA.so
 vendor/lib64/VP9SecureVdecCA.so
@@ -2025,8 +2016,6 @@ vendor/lib/libhwm.so
 vendor/lib/librgbwlightsensor.so
 vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
 vendor/lib64/hw/sensors.mt6781.so
-vendor/lib64/libcam.halsensor.so
-vendor/lib64/libcam.utils.sensorprovider.so
 vendor/lib64/libhwm-oplus.so
 vendor/lib64/libhwm.so
 vendor/lib64/libksensor.so
@@ -2119,7 +2108,6 @@ vendor/lib/libTEECommon.so
 vendor/lib/libgz_gp_client.so
 vendor/lib/libgz_uree.so
 vendor/lib64/hw/kmsetkey.trustonic.so
-vendor/lib64/hw/libMcGatekeeper.so
 vendor/lib64/libMcClient.so
 vendor/lib64/libTEECommon.so
 vendor/lib64/libgz_gp_client.so
