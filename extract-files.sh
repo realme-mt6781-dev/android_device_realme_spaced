@@ -68,7 +68,8 @@ function blob_fixup {
         vendor/lib*/libsysenv.so|\
         vendor/lib*/libtflite_mtk.so|\
         odm/bin/hw/vendor.oplus.hardware.charger@1.0-service|\
-        vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron)
+        vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron|\
+        vendor/bin/hw/android.hardware.sensors@2.0-service.multihal-mediatek)
             [ "$2" = "" ] && return 0
             grep -q "libbase_shim.so" "${2}" || "${PATCHELF}" --add-needed "libbase_shim.so" "${2}"
             ;;
