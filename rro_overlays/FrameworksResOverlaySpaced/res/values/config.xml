@@ -539,7 +539,7 @@
 
     <!-- If device supports corner radius on windows.
          This should be turned off on low-end devices to improve animation performance. -->
-    <bool name="config_supportsRoundedCornersOnWindows">false</bool>
+    <bool name="config_supportsRoundedCornersOnWindows">true</bool>
 
     <!-- Whether WM DisplayContent supports high performance transitions
          (lower-end devices may want to disable) -->
