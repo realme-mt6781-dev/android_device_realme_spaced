@@ -10,3 +10,6 @@ get_prop(vendor_init, vendor_variant_prop)
 
 set_prop(vendor_init, vendor_mtk_pq_prop)
 set_prop(vendor_init, vendor_persist_light_prop)
+
+# Attempt to fix OTG
+allow vendor_init sysfs_otg_switch:file { open write };

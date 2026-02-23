@@ -47,6 +47,8 @@
         <item>org.telegram.messenger</item>
         <item>org.thunderdog.challegram</item>
         <item>us.zoom.videomeetings</item>
+        <item>com.whatsapp</item>
+        <item>com.snapchat.android</item>
     </string-array>
 
     <!-- Defines the actions shown in advanced reboot submenu -->

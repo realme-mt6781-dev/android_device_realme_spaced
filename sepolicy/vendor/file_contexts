@@ -57,3 +57,6 @@
 
 # Vibrator
 /vendor/bin/hw/android\.hardware\.vibrator-service\.mediatek                                                           u:object_r:hal_vibrator_default_exec:s0
+
+# Attemp to fix OTG
+/sys/class/oplus_chg/usb/otg_switch                                                                                    u:object_r:sysfs_otg_switch:s0 
