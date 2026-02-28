@@ -16,8 +16,9 @@
 
 #include <cstdlib>
 #include <fstream>
-#include <cstring>
+#include <string.h>
 #include <sys/sysinfo.h>
+#include <unistd.h>
 
 #include <android-base/properties.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
@@ -26,6 +27,7 @@
 #include "vendor_init.h"
 #include "property_service.h"
 
+using android::base::GetProperty;
 using android::init::property_set;
 
 void load_dalvik_properties() {
