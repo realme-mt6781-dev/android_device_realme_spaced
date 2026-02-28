@@ -30,13 +30,15 @@
 using android::base::GetProperty;
 using android::init::property_set;
 
-void load_dalvik_properties() {
-    char const *heapstartsize;
-    char const *heapgrowthlimit;
-    char const *heapsize;
-    char const *heapminfree;
-    char const *heapmaxfree;
-    char const *heaptargetutilization;
+char const *heapstartsize;
+char const *heapgrowthlimit;
+char const *heapsize;
+char const *heapminfree;
+char const *heapmaxfree;
+char const *heaptargetutilization;
+
+void check_device()
+{
     struct sysinfo sys;
 
     sysinfo(&sys);
@@ -57,9 +59,12 @@ void load_dalvik_properties() {
         heaptargetutilization = "0.6";
         heapminfree = "8m";
         heapmaxfree = "16m";
-    } else {
-        return;
     }
+}
+
+void vendor_load_properties()
+{
+    check_device();
 
     property_set("dalvik.vm.heapstartsize", heapstartsize);
     property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
@@ -67,8 +72,4 @@ void load_dalvik_properties() {
     property_set("dalvik.vm.heaptargetutilization", heaptargetutilization);
     property_set("dalvik.vm.heapminfree", heapminfree);
     property_set("dalvik.vm.heapmaxfree", heapmaxfree);
-}
-
-void vendor_load_properties() {
-    load_dalvik_properties();
 }
