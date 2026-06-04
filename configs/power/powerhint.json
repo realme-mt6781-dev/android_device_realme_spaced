@@ -132,28 +132,35 @@
       "Path": "/dev/cpuctl/foreground/cpu.uclamp.min",
       "Values": [
         "100",
+        "60",
         "0"
       ],
-      "ResetOnInit": true
+      "ResetOnInit": true,
+      "DefaultIndex": 2
     },
     {
       "Name": "TAUclampMin",
       "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
       "Values": [
         "100",
+        "80",
+        "60",
         "45",
         "0"
       ],
-      "ResetOnInit": true
+      "ResetOnInit": true,
+      "DefaultIndex": 3
     },
     {
       "Name": "CDUclampMin",
       "Path": "/dev/cpuctl/camera-daemon/cpu.uclamp.min",
       "Values": [
         "100",
+        "25",
         "0"
       ],
-      "ResetOnInit": true
+      "ResetOnInit": true,
+      "DefaultIndex": 1
     },
     {
       "Name": "DRAMOppMin",
@@ -186,19 +193,28 @@
     {
       "Name": "PowerHALMainState",
       "Path": "vendor.mediatek.powerhal.state",
-      "Values": ["SUSTAINED_PERFORMANCE", ""],
+      "Values": [
+        "SUSTAINED_PERFORMANCE",
+        ""
+      ],
       "Type": "Property"
     },
     {
       "Name": "PowerHALAudioState",
       "Path": "vendor.powerhal.audio",
-      "Values": ["AUDIO_STREAMING_LOW_LATENCY", ""],
+      "Values": [
+        "AUDIO_STREAMING_LOW_LATENCY",
+        ""
+      ],
       "Type": "Property"
     },
     {
       "Name": "PowerHALRenderingState",
       "Path": "vendor.powerhal.rendering",
-      "Values": ["EXPENSIVE_RENDERING", ""],
+      "Values": [
+        "EXPENSIVE_RENDERING",
+        ""
+      ],
       "Type": "Property"
     },
     {
@@ -257,32 +273,62 @@
     {
       "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMaxFreq",
-      "Duration": 60,
+      "Duration": 120,
       "Value": "2000000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMinFreq",
-      "Duration": 60,
-      "Value": "1375000"
+      "Duration": 120,
+      "Value": "1500000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUBigClusterMaxFreq",
-      "Duration": 60,
+      "Duration": 120,
       "Value": "2050000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUBigClusterMinFreq",
-      "Duration": 60,
-      "Value": "1419000"
+      "Duration": 120,
+      "Value": "1530000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "TAUclampMin",
-      "Duration": 60,
-      "Value": "45"
+      "Duration": 120,
+      "Value": "60"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "DRAMOppMin",
+      "Duration": 120,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "GPUSchedMode",
+      "Duration": 120,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "GPUSchedPeriod",
+      "Duration": 120,
+      "Value": "50"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "GPUDVFSInterval",
+      "Duration": 120,
+      "Value": "50"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "SchedBoost",
+      "Duration": 120,
+      "Value": "1"
     },
     {
       "PowerHint": "LAUNCH",
@@ -333,22 +379,142 @@
       "Value": "1"
     },
     {
+      "PowerHint": "LAUNCH",
+      "Node": "GPUSchedMode",
+      "Duration": 3000,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "GPUSchedPeriod",
+      "Duration": 3000,
+      "Value": "50"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "GPUDVFSInterval",
+      "Duration": 3000,
+      "Value": "50"
+    },
+    {
       "PowerHint": "CAMERA_LAUNCH",
       "Node": "CDUclampMin",
-      "Duration": 1000,
+      "Duration": 1500,
       "Value": "100"
+    },
+    {
+      "PowerHint": "CAMERA_LAUNCH",
+      "Node": "CPULittleClusterMinFreq",
+      "Duration": 1500,
+      "Value": "1500000"
+    },
+    {
+      "PowerHint": "CAMERA_LAUNCH",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 1500,
+      "Value": "1530000"
+    },
+    {
+      "PowerHint": "CAMERA_LAUNCH",
+      "Node": "DRAMOppMin",
+      "Duration": 1500,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_LAUNCH",
+      "Node": "SchedBoost",
+      "Duration": 1000,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "CPULittleClusterMinFreq",
+      "Duration": 0,
+      "Value": "1375000"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 0,
+      "Value": "1419000"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "TAUclampMin",
+      "Duration": 0,
+      "Value": "60"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "DRAMOppMin",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "GPUSchedMode",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "GPUSchedPeriod",
+      "Duration": 0,
+      "Value": "50"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "GPUDVFSInterval",
+      "Duration": 0,
+      "Value": "50"
     },
     {
       "PowerHint": "GAME_LOADING",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 0,
-      "Value": "2000000"
+      "Value": "1500000"
     },
     {
       "PowerHint": "GAME_LOADING",
       "Node": "CPUBigClusterMinFreq",
       "Duration": 0,
-      "Value": "2050000"
+      "Value": "1530000"
+    },
+    {
+      "PowerHint": "GAME_LOADING",
+      "Node": "TAUclampMin",
+      "Duration": 0,
+      "Value": "80"
+    },
+    {
+      "PowerHint": "GAME_LOADING",
+      "Node": "DRAMOppMin",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "GAME_LOADING",
+      "Node": "GPUSchedMode",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "GAME_LOADING",
+      "Node": "GPUSchedPeriod",
+      "Duration": 0,
+      "Value": "50"
+    },
+    {
+      "PowerHint": "GAME_LOADING",
+      "Node": "GPUDVFSInterval",
+      "Duration": 0,
+      "Value": "50"
+    },
+    {
+      "PowerHint": "GAME_LOADING",
+      "Node": "SchedBoost",
+      "Duration": 3000,
+      "Value": "1"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
@@ -363,21 +529,93 @@
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "CPULittleClusterMinFreq",
+      "Duration": 1500,
+      "Value": "1500000"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 1500,
+      "Value": "1530000"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "FGUclampMin",
+      "Duration": 1500,
+      "Value": "60"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "TAUclampMin",
+      "Duration": 1500,
+      "Value": "60"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "DRAMOppMin",
+      "Duration": 1500,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "GPUSchedMode",
+      "Duration": 1500,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUSchedPeriod",
-      "Duration": 0,
-      "Value": "100"
+      "Duration": 1500,
+      "Value": "50"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUDVFSInterval",
       "Duration": 0,
-      "Value": "75"
+      "Value": "50"
     },
     {
-      "PowerHint": "EXPENSIVE_RENDERING",
-      "Node": "GPUSchedMode",
-      "Duration": 0,
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "CPULittleClusterMinFreq",
+      "Duration": 1000,
+      "Value": "1375000"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 1000,
+      "Value": "1419000"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "TAUclampMin",
+      "Duration": 1000,
+      "Value": "60"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "DRAMOppMin",
+      "Duration": 1000,
       "Value": "1"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "GPUSchedMode",
+      "Duration": 1000,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "GPUSchedPeriod",
+      "Duration": 1000,
+      "Value": "50"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "GPUDVFSInterval",
+      "Duration": 1000,
+      "Value": "50"
     },
     {
       "PowerHint": "DOUBLE_TAP_TO_WAKE",
