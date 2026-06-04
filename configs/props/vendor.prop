@@ -87,7 +87,6 @@ ro.vendor.pq.mtk_blulight_def_support=1
 ro.sf.blurs_are_expensive=1
 ro.hardware.egl=meow
 debug.graphics.game_default_frame_rate.disabled=true
-debug.renderengine.backend=skiaglthreaded
 debug.hwui.skia_tracing_enabled=false
 debug.hwui.skia_use_perfetto_track_events=false
 ro.hardware.hwcomposer=mtk_common
